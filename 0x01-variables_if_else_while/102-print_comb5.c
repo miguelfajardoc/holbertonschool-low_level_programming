@@ -10,22 +10,12 @@
  */
 int main(void)
 {
-	int w = 0;
-	int x = 0;
-	int y = 0;
-	int zz = 0;
-	int zd = 1;
+	int y = 0, zz = 0, zd = 1, z = 1;
+	int k, m, j, i;
 
-	int z = zd;
-
-	int k;
-	int m;
-	int j;
-	int i;
-
-	for (k = w ; k < 10 ; k++)
+	for (k = 0 ; k < 10 ; k++)
 	{
-		for (m = x ; m < 10 ; m++)
+		for (m = 0 ; m < 10 ; m++)
 		{
 			for (j = y ; j < 10 ; j++)
 			{
@@ -36,9 +26,7 @@ int main(void)
 					putchar(32);
 					putchar(j + '0');
 					putchar(i + '0');
-					if (k == 9 && m == 8 && j == 9 && i == 9)
-						;
-					else
+					if (k != 9 || m != 8 || j != 9 || i != 9)
 					{
 						putchar(44);
 						putchar(32);
@@ -57,13 +45,9 @@ int main(void)
 					else if (i == 9)
 						z = zz;
 				}
-
 			}
-
 		}
 	}
-
 		putchar('\n');
-
 	return (0);
 }

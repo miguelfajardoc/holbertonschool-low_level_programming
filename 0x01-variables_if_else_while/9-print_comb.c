@@ -13,22 +13,19 @@ int main(void)
 
 	int a = 48;
 
-	do
-	{
-
+	do {
+	putchar(a);
 		if (a == 57)
 		{
-			putchar(a);
 		}
 		else
 		{
-			putchar(a);
 			putchar(44);
 			putchar(32);
 		}
-		a++;
+	a++;
 
-	}while(a < 58);
+	} while (a < 58);
 	putchar('\n');
 	return (0);
 }

@@ -11,7 +11,7 @@
 int main(void)
 {
 
-	char a;
+	int a;
 
 	for (a = 48; a < 58; ++a)
 	{

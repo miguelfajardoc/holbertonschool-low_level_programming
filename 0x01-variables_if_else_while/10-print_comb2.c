@@ -11,8 +11,8 @@
 int main(void)
 {
 
-	char i;
-	char j;
+	int i;
+	int j;
 
 	for (i = 48 ; i <= 57 ; ++i)
 	{

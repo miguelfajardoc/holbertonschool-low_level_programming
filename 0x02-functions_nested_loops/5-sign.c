@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * sign - check if a numbeer is positive or negative, print the sign.
+ * print_sign - check if a numbeer is positive or negative, print the sign.
  * @n: the number to check
  * Return: 1 if the number is positive an 0 if is negative.
  */

@@ -1,4 +1,3 @@
-#include <ctype.h>
 #include "holberton.h"
 /**
  * _islower - check if a letter is lowercase or not

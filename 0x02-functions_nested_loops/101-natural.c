@@ -1,6 +1,8 @@
 #include <stdio.h>
 /**
- * natural - prints sum of natural numbers less than 1024
+ * main - prints sum of natural numbers less than 1024\
+ *
+ * Description: sum the numbers multiples of 3 and 5
  * Return: if no error, always 0
  */
 
@@ -10,7 +12,7 @@ int main(void)
 	int n = 0;
 	int sum = 0;
 
-	while (n <= 1024)
+	while (n < 1024)
 	{
 		n += 1;
 
@@ -19,7 +21,7 @@ int main(void)
 
 	}
 
-	printf ("%d\n", sum);
+	printf("%d\n", sum);
 
 	return (0);
 }

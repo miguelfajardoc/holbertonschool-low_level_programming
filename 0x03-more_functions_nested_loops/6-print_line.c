@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
  * print_line - print lines n long
- *
+ * @n: long of the lines sized by '_'
  * Return: none.
  */
 

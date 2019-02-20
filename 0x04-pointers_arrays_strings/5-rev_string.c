@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 /**
  * rev_string - reverse a string.
  *
@@ -9,9 +8,9 @@
 void rev_string(char *s)
 {
 	char *r;
-	/*char *n;*/
+	char *n;
 
-	/*n = s;*/
+	n = &*s;
 
 	while (*s != '\0')
 	{
@@ -19,13 +18,13 @@ void rev_string(char *s)
 		s++;
 		*r++;
 
-		}
-	/*s = n;*/
+	}
+	s = n;
 	while (*s != '\0')
 	{
 		*s = r;
 		*r--;
 		s++;
-		}*/
-	printf("ok %i", *s);
+	}
+
 }

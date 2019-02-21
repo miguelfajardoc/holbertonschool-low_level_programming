@@ -1,11 +1,12 @@
 #include "holberton.h"
 #include <stdio.h>
 /**
- * _strcpy - copy the content of the string pointed to the buffer pointedby dest
+ * _strcpy - copy the content of the string to the buffer pointedby dest
  *
  * @dest: the pointer that point the destinity of the string copied.
  * @src: the pointer thar point the string origin to be copied.
  *
+ * Return: return the destination.
  */
 char *_strcpy(char *dest, char *src)
 {
@@ -14,7 +15,7 @@ char *_strcpy(char *dest, char *src)
 
 	while (p)
 	{
-		if ( i != 0 && *(src + (i)) == '\0')
+		if (i != 0 && *(src + (i)) == '\0')
 		{
 			*(dest + i) = *(src + i);
 			p--;

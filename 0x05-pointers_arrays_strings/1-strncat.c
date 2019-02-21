@@ -1,35 +1,27 @@
 #include "holberton.h"
 /**
- * _strcat - concatenate two strings
+ * _strncat - concatenate two strings depending n.
  *
  * @dest: the pointer that point the destinity of the strings concatenated.
  * @src: the pointer thar point the string origin to be copied.
+ * @n: the number of bytes to be copied.
  *
  * Return: return the concatenated string.
  */
-char *_strcat(char *dest, char *src)
+char *_strncat(char *dest, char *src, int n)
 {
-	int p = 1;
-	int i = 0;
 	int l = 0;
+	int i = 0;
 
-	while (*(dest + l) != '\0')
-	{
+	while (*(dest + l) != 0)
 		l++;
-	}
 
-	while (p)
+	while (!(!(n != 0) || !(*(src + i) != 0)))
 	{
-		if (*(src + i) == '\0')
-		{
-			*(dest + l) = *(src + i);
-			p--;
-		}
-		else
-			*(dest + l) = *(src + i);
+		*(dest + l) = *(src + i);
+		l++;
 		i++;
-		l++;
+		n--;
 	}
-
 	return (dest);
 }

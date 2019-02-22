@@ -10,50 +10,17 @@ char *cap_string(char *s)
 
 	while (*(s + i) != '\0')
 	{
+		if (s[0] <= 'z' && s[0] >= 'a')
+			s[0] -= 32;
 		t = *(s + i - 1);
 		if (*(s + i) <= 'z' && *(s + i) >= 'a')
 		{
-			switch (t)
+			if (t == '\n' || t == '\t' || t == ',' || t == ';'
+			    || t == '.' || t == '!' || t == '?' || t == '"'
+			    || t == '(' || t == ')' || t == '{' || t == '}'
+			    || t == ' ')
 			{
-			case '\n':
 				*(s + i) -= 32;
-				break;
-			case '\t':
-				*(s + i) -= 32;
-				break;
-			case ',':
-				*(s + i) -= 32;
-				break;
-			case ';':
-				*(s + i) -= 32;
-				break;
-			case '.':
-				*(s + i) -= 32;
-				break;
-			case '!':
-				*(s + i) -= 32;
-				break;
-			case '?':
-				*(s + i) -= 32;
-				break;
-			case '"':
-				*(s + i) -= 32;
-				break;
-			case '(':
-				*(s + i) -= 32;
-				break;
-			case ')':
-				*(s + i) -= 32;
-				break;
-			case '{':
-				*(s + i) -= 32;
-				break;
-			case '}':
-				*(s + i) -= 32;
-				break;
-			case ' ':
-				*(s + i) -= 32;
-				break;
 			}
 		}
 		i++;

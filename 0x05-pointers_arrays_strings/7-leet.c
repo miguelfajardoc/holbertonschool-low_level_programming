@@ -15,13 +15,12 @@ char *leet(char *s)
 	while (*(s + i) != '\0')
 	{
 		j = 0;
-		while (s[i] != lto[j] && *(lto + j) != '\0')
+		while (s[i] != lto[j] && j < 10)
 		{
 			j++;
 		}
-		printf("%d\n", j);
 		if (j < 10)
-			s[i] = ltd[j];
+			s[i] = ltd[j] + '0';
 		i++;
 	}
 	return (s);

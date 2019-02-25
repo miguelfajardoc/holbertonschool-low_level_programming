@@ -1,11 +1,10 @@
 #include "holberton.h"
 #include <stdio.h>
 /**
- * _strch - find a char in string.
+ * _strchr - find a char in string.
  * @s: the string to search.
  * @c: the char to find.
- * Return: return a pointer to the first occurrence of c, or NULL if the
- character never was found.
+ * Return: return pointr to the first occur or NULL if the char never was found
  */
 char *_strchr(char *s, char c)
 {
@@ -16,10 +15,9 @@ char *_strchr(char *s, char c)
 
 	if (s[i] == '\0')
 	{
-		s = s + i;
-		s = 0;
-		return (s);
+		return (0);
 	}
-	s = s + i
+
+	s = s + i;
 	return (s);
 }

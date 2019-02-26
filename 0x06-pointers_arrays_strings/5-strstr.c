@@ -9,39 +9,36 @@
 char *_strstr(char *haystack, char *needle)
 {
 	char *first;
-	int f = 0;
-	int st = 0;
-	int i;
-	int j;
+	int B = 0;
+	int s = 0;
+	int i, j;
 
-	for (i = 0; needle[i] ; i++)
+	while (haystack[i] != '\0' && needle[j] != '\0')
 	{
-		for (j = 0; haystack[j]; j++)
+		if (needle[j] == haystack[i] && B == 0)
 		{
-			if (needle[i] == haystack[j] && f != 0)
-			{
-				st++;
-				printf("st");
-				break;
-			}
-			else if (needle[i] == haystack[j])
-			{
-				f = 1;
-				first = haystack + j;
-				printf("f");
-				break;
-			}
-			else
-			{
-				st = 0;
-				f = 0;
-			}
-			printf("in");
+			s++;
+			i++;
+			j++;
+			B = 1;
+			first = haystack + i - 1;
 		}
-		if (haystack[j] == '\0' && needle[i + 1] == '\0' && st > 0)
-			return (first);
-		printf("out");
+		else if (needle[j] == haystack[i])
+		{
+			s++;
+			j++;
+			i++;
+		}
+		else
+		{
+			s = 0;
+			i++;
+			j = 0;
+			B = 0;
+		}
 	}
-	printf("aa");
-	return (0);
+	if (s == 0 || needle[j] != '\0')
+		return (0);
+	else
+		return (first);
 }

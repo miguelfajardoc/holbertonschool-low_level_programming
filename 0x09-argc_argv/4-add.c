@@ -12,8 +12,6 @@ int main(int argc, char *argv[])
 	int i;
 	int sum = 0;
 
-	printf("argc%d\n", argc);
-
 	for (j = 1; j < argc; j++)
 	{
 		if (argc <= 2)

@@ -7,7 +7,6 @@
  * Return: the pointer to the grid. The grid should be start in 0. If width or
  * height is 0 or negative, return NULL.
  */
-
 int **alloc_grid(int width, int height)
 {
 	int i = 0;
@@ -19,12 +18,18 @@ int **alloc_grid(int width, int height)
 
 	d = malloc(sizeof(int *) * height);
 	if (d == NULL)
+	{
+		free(d);
 		return (NULL);
+	}
 	while (j < width)
 	{
 		*(d + j) = malloc(sizeof(int) * width);
 		if (*(d + j) == NULL)
-			break;
+		{
+			free(d);
+			return (NULL);
+		}
 		j++;
 	}
 	j = 0;
@@ -37,6 +42,5 @@ int **alloc_grid(int width, int height)
 		}
 		i++;
 	}
-
 	return (d);
 }

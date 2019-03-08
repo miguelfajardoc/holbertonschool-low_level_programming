@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include "holberton.h"
 /**
  * free_grid - free the memory of two dimensional array
  * @grid: the grid
@@ -11,17 +12,15 @@ void free_grid(int **grid, int height)
 {
 	int j = 0;
 
-	if (grid == NULL)
-		;
-	else if (height <= 0)
+	if (grid == NULL || height <= 0)
 		;
 	else
 	{
-		//free(grid);
 		while (j < height)
 		{
-			free(*(grid + j));
+			free(grid[j]);
 			j++;
-			}
+		}
+		free(grid);
 	}
 }

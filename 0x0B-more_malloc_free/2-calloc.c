@@ -6,7 +6,7 @@
  * @nmemb: the string that passed
  * @size: size
  *
- * Return: the size of the string, within null, if the string is null, return 0;
+ * Return: size of the string, within null, if the string is null, return 0;
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {

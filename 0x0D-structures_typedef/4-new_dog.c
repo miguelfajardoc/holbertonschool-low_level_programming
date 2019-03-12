@@ -37,7 +37,7 @@ char *_strdup(char *str)
 	p = malloc(sizeof(char) * size);
 	if (p == NULL)
 	{
-		free (str);
+		free(str);
 		return (NULL);
 	}
 	for (i = 0; i < size; i++)
@@ -46,8 +46,7 @@ char *_strdup(char *str)
 	return (p);
 }
 /**
- * init_dog - initialize dog.
- * @d: the structure of the dog d
+ * new_dog - create a new dog structure.
  * @name: pointer to the name
  * @age: the age
  * @owner: the owner
@@ -64,11 +63,16 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	own = _strdup(owner);
 	if (own == NULL)
+	{
+		free(nomb);
 		return (NULL);
+	}
 	new = malloc(sizeof(dog_t));
 	if (new == NULL)
 	{
-		free (new);
+		free(own);
+		free(nomb);
+		free(new);
 		return (NULL);
 	}
 

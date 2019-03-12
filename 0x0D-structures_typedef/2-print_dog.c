@@ -2,12 +2,9 @@
 #include <stdlib.h>
 #include "dog.h"
 /**
- * init_dog - initialize dog.
+ * print_dog - print dog.
  * @d: the structure of the dog d
- * @name: pointer to the name
- * @age: the age
- * @owner: the owner
- * Return: Always 0.
+ * Return: nil when is null.
  */
 void print_dog(struct dog *d)
 {

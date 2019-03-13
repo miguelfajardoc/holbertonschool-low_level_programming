@@ -7,6 +7,7 @@
  * @array: the array to look
  * @size: the size of the array
  * @cmp: the pointer to point the function to use to compare
+ * Return: the index when the number was found
  */
 int int_index(int *array, int size, int (*cmp)(int))
 {

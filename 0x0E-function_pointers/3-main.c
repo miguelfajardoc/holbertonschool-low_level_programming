@@ -22,13 +22,12 @@ int main(int argc, char *argv[])
 	j = atoi(argv[3]);
 	p = argv[2];
 
-	if (*p != '+' || *p != '-' || *p != '*' || *p != '/' || *p != '%')
+	if (get_op_func(p) != NULL)
 	{
 		printf("%d\n", get_op_func(p)(i, j));
 	}
 	else
 	{
-		printf("Error\n");
 		exit(99);
 	}
 	return (0);

@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 
 	if (*p != '+' || *p != '-' || *p != '*' || *p != '/' || *p != '%')
 	{
-		printf("%d\n", get_op_func(p)(i , j));
+		printf("%d\n", get_op_func(p)(i, j));
 	}
 	else
 	{

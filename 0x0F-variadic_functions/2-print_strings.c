@@ -5,6 +5,7 @@
  * print_strings - print strings with a separator
  * @separator: the separator that separates the numbers
  * @n: the number of args.
+ *
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {

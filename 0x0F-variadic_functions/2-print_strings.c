@@ -6,7 +6,6 @@
  * @separator: the separator that separates the numbers
  * @n: the number of args.
  */
-void printt(char *str);
 void print_strings(const char *separator, const unsigned int n, ...)
 {
 	va_list vlist;
@@ -30,7 +29,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			p = va_arg(vlist, char*);
 			printt(p);
 			printf("%s", separator);
-     		}
+		}
 		printt(va_arg(vlist, char*));
 	}
 	va_end(vlist);
@@ -38,7 +37,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 }
 /**
  * printt - check if print string or nill
- * @str - the string to check
+ * @str: the string to check
  *
  */
 void printt(char *str)

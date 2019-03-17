@@ -49,7 +49,7 @@ void prints(va_list vlist)
 	switch (!p + 0)
 	{
 	case 1:
-		printf("(nil)");
+		printf("%p", p);
 		break;
 	default:
 		printf("%s", p);

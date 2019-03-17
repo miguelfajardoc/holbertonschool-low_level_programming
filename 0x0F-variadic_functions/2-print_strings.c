@@ -15,23 +15,26 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 	va_start(vlist, n);
 
-	if (separator == NULL)
+	if (n != 0)
 	{
-		for (i = 0; i < n; i++)
+		if (separator == NULL)
 		{
-			p = va_arg(vlist, char*);
-			printt(p);
+			for (i = 0; i < n; i++)
+			{
+				p = va_arg(vlist, char*);
+				printt(p);
+			}
 		}
-	}
-	else
-	{
-		for (i = 0; i < n - 1; i++)
+		else
 		{
-			p = va_arg(vlist, char*);
-			printt(p);
-			printf("%s", separator);
+			for (i = 0; i < n - 1; i++)
+			{
+				p = va_arg(vlist, char*);
+				printt(p);
+				printf("%s", separator);
+			}
+			printt(va_arg(vlist, char*));
 		}
-		printt(va_arg(vlist, char*));
 	}
 	va_end(vlist);
 	printf("\n");

@@ -6,32 +6,30 @@
  * @separator: the separator that separates the numbers
  * @n: the number of args.
  */
-void printd(int i);
-void prints(char *str);
-void print_all(const char * const format, ...)
+int main()
 {
-	int i;
-	ptslt func[]={
-		{"c", printc},
-		{"i", printi},
-		{"f", printfl},
-		{"s", prints}
+	char* s = "some";
+	int i= 666;
+	float fl = 8.9;
+	char c = 'c';
+	ptslt fun[] = {
+		{'s', prints},
+		{'i', printd},
+		{'f', printfl},
+		{'c', printc}
 	};
-
-	for (i = 0; format; i++)
-	{
-		if
-
-
-	f = prints;
-	f(s);
-	f = printd;
-	f(i);
-
+	fun[0].f = prints;
+	fun[0].f(s);
+	fun[1].f = printd;
+	fun[1].f(i);
+	fun[2].f = printfl;
+	fun[2].f(fl);
+	fun[3].f = printc;
+	fun[3].f(c);
 	return (0);
 }
 /**
- * printt - check if print string or nill
+ * prints - check if print string or nill
  * @str - the string to check
  *
  */
@@ -43,7 +41,6 @@ void printd(int i)
 {
 	printf("%d\n", i);
 }
-/*
 void printfl(float f)
 {
 	printf("%f\n", f);
@@ -51,4 +48,4 @@ void printfl(float f)
 void printc(char c)
 {
 	printf("%c\n", c);
-	}*/
+}

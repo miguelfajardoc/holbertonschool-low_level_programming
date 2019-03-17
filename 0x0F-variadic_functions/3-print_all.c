@@ -6,46 +6,65 @@
  * @separator: the separator that separates the numbers
  * @n: the number of args.
  */
-int main()
+void print_all(const char * const format, ...)
 {
-	char* s = "some";
-	int i= 666;
-	float fl = 8.9;
-	char c = 'c';
+	va_list vlist;
+	unsigned int j = 0;
+	unsigned int i= 0;
 	ptslt fun[] = {
 		{'s', prints},
 		{'i', printd},
 		{'f', printfl},
 		{'c', printc}
 	};
-	fun[0].f = prints;
-	fun[0].f(s);
-	fun[1].f = printd;
-	fun[1].f(i);
-	fun[2].f = printfl;
-	fun[2].f(fl);
-	fun[3].f = printc;
-	fun[3].f(c);
-	return (0);
+	va_start(vlist, format);
+	while (*(format + i) != '\0')
+	{
+		j = 0;
+		while (j < 4)
+		{
+			if (*(format + i) == fun[j].a)
+			{
+				fun[j].f(vlist);
+				if (*(format + i + 1) != '\0')
+					printf(", ");
+			}
+			j++;
+		}
+		i++;
+	}
+	printf("\n");
+	va_end(vlist);
 }
 /**
  * prints - check if print string or nill
  * @str - the string to check
  *
  */
-void prints(char *str)
+void prints(va_list vlist)
 {
-	printf("%s\n", str);
+	char *p;
+
+	p = va_arg(vlist, char*);
+	switch (!p + 0)
+	{
+	case 0:
+		printf("%p", p);
+		break;
+	default :
+		printf("%s", p);
+		break;
+	}
 }
-void printd(int i)
+void printd(va_list vlist)
 {
-	printf("%d\n", i);
+	printf("%d", va_arg(vlist, int));
 }
-void printfl(float f)
+void printfl(va_list vlist)
 {
-	printf("%f\n", f);
+	printf("%f", va_arg(vlist, double));
 }
-void printc(char c)
+void printc(va_list vlist)
 {
-	printf("%c\n", c);
+	printf("%c", va_arg(vlist, int));
 }

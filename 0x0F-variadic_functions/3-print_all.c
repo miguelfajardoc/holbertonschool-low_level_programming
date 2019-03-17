@@ -2,15 +2,14 @@
 #include "variadic_functions.h"
 #include <stdarg.h>
 /**
- * print_strings - print strings with a separator
- * @separator: the separator that separates the numbers
- * @n: the number of args.
+ * print_all - print strings with a separator
+ * @format: the format to print
  */
 void print_all(const char * const format, ...)
 {
 	va_list vlist;
 	unsigned int j = 0;
-	unsigned int i= 0;
+	unsigned int i = 0;
 	ptslt fun[] = {
 		{'s', prints},
 		{'i', printd},
@@ -18,7 +17,7 @@ void print_all(const char * const format, ...)
 		{'c', printc}
 	};
 	va_start(vlist, format);
-	while (*(format + i) != '\0')
+	while (format != NULL && *(format + i) != '\0')
 	{
 		j = 0;
 		while (j < 4)
@@ -32,13 +31,14 @@ void print_all(const char * const format, ...)
 			j++;
 		}
 		i++;
+
 	}
-	printf("\n");
 	va_end(vlist);
+	printf("\n");
 }
 /**
- * prints - check if print string or nill
- * @str - the string to check
+ * prints - print a string with printf
+ * @vlist: the string to print
  *
  */
 void prints(va_list vlist)
@@ -48,22 +48,37 @@ void prints(va_list vlist)
 	p = va_arg(vlist, char*);
 	switch (!p + 0)
 	{
-	case 0:
+	case '0':
 		printf("%p", p);
 		break;
-	default :
+	default:
 		printf("%s", p);
 		break;
 	}
 }
+/**
+ * printd - print a integer with printf
+ * @vlist: the integer to print
+ *
+ */
 void printd(va_list vlist)
 {
 	printf("%d", va_arg(vlist, int));
 }
+/**
+ * printfl - print a integer with printf
+ * @vlist: the float to print
+ *
+ */
 void printfl(va_list vlist)
 {
 	printf("%f", va_arg(vlist, double));
 }
+/**
+ * printc - print a char with printf
+ * @vlist: the char to print
+ *
+ */
 void printc(va_list vlist)
 {
 	printf("%c", va_arg(vlist, int));

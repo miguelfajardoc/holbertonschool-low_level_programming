@@ -2,16 +2,16 @@
 #define VARIADICSF
 #include <stdarg.h>
 #include <stdio.h>
-/**
- * struct format - Struct format
- *
- * @a: The format
- * @f: The function to select
- */
 void printc(va_list vlist);
 void printfl(va_list vlist);
 void printd(va_list vlist);
 void prints(va_list vlist);
+/**
+ * struct a - Struct format
+ *
+ * @a: The format
+ * @f: The function to select
+ */
 typedef struct a
 {
 	char a;

@@ -1,6 +1,6 @@
 section .text
-	global _start
-_start:
+	global main
+main:
 	mov rdx,len
 	mov rcx,msg
 	mov rbx,1
@@ -11,5 +11,6 @@ _start:
 	int 0x80
 
 	section .data
+messge:
 	msg db 'Hello, Holberton', 0xa
 	len equ $ - msg

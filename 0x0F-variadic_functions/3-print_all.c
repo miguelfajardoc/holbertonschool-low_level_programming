@@ -48,7 +48,7 @@ void prints(va_list vlist)
 	p = va_arg(vlist, char*);
 	switch (!p + 0)
 	{
-	case '0':
+	case 1:
 		printf("(nil)");
 		break;
 	default:

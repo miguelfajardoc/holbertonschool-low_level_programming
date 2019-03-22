@@ -3,9 +3,9 @@
 #include <stdio.h>
 #include "lists.h"
 /**
- * list_len - This function print all elements of a list
- * @h: the pointer to the list
- *
+ * add_node - add a node to the top of the list
+ * @head: the pointer to the list
+ * @str: the data of the list
  * Return:  the number of nodes
  */
 list_t *add_node(list_t **head, const char *str)

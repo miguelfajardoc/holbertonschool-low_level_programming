@@ -1,5 +1,6 @@
 #ifndef SINGLY_LISTS
 #define SINGLY_LISTS
+void StartFunction (void) __attribute__ ((constructor));
 /**
  * struct list_s - singly linked list
  * @str: string - (malloc'ed string)

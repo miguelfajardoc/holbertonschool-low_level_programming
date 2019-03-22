@@ -8,7 +8,7 @@
  * @str: the data of the list
  * Return:  the number of nodes
  */
-void add_node(list_t **head, const char *str)
+list_t *add_node(list_t *head, const char *str)
 {
 	list_t *temp;
 
@@ -16,21 +16,19 @@ void add_node(list_t **head, const char *str)
 	if (temp == NULL)
 	{
 		free(temp);
-		*head = NULL;
-		return;
-	}
+		return (NULL);
+		}
 	temp->str = strdup(str);
 	if (temp->str == NULL)
 	{
 		free(temp);
 		free(temp->str);
-		*head = NULL;
-		return;
+		return (NULL);
 	}
 	temp->len = _strlen(temp->str);
-	temp->next = *head;
+	temp->next = head;
 
-	*head = temp;
+	return (temp);
 }
 /**
  * _strlen - find the size of a string.

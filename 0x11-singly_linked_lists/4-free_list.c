@@ -9,17 +9,15 @@
  */
 void free_list(list_t *head)
 {
-	int n_node = 0;
+	list_t *temp;
 
-	if (h != NULL)
+
+	if (head != NULL)
 	{
-		if (h->str == NULL)
-			printf("[%u] %p\n", h->len, h->str);
-		else
-			printf("[%u] %s\n", h->len, h->str);
-		if (h->next != NULL)
-			n_node = print_list(h->next);
-		n_node++;
+		temp = head;
+		head = temp->next;
+		free(temp->str);
+		free(temp);
+		free_list(head);
 	}
-	return (n_node);
 }

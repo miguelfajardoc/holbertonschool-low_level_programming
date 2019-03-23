@@ -13,4 +13,5 @@ main:
 	ret
 
 	section	.data
-	message	db	"Hello, Holberton", 13, 10, 0
+	message	db	"Hello, Holberton", 10, 0
+	len equ $ - message

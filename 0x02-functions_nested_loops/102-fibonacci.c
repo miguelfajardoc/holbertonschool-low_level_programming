@@ -12,8 +12,6 @@ int main(void)
 	long int y = 0;
 	long int n = 0;
 
-	printf("%ld, ", x);
-	i = 0;
 	while (i < 50)
 	{
 		n = x + y;

@@ -3,7 +3,7 @@
 #include <string.h>
 #include "lists.h"
 /**
- * print_listint - print a list
+ * listint_len - count the amount of members in a list
  * @h: the pointer to the list
  *
  * Return: the number of elements of the list

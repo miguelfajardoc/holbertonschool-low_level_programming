@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include "lists.h"
 /**
- * add_nodeint - add a node to the end of the list
+ * add_nodeint_end - add a node to the end of the list
  * @head: the pointer to the list
  * @n: the data of the list
  * Return: the number of nodes

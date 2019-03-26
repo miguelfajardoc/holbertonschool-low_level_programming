@@ -13,7 +13,7 @@ int main(void)
 	long int n = 0;
 
 	printf("%ld, ", x);
-	i = 1;
+	i = 0;
 	while (i < 50)
 	{
 		n = x + y;
@@ -21,8 +21,7 @@ int main(void)
 		y = x;
 		x = n;
 		i++;
-
-		if (i + 1 < 50)
+		if (i < 50)
 			printf(", ");
 	}
 	printf("\n");

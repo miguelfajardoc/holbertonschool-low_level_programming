@@ -14,7 +14,13 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	listint_t *aux;
 	listint_t *new;
 
-	aux = get_nodeint_at_index(*head, idx - 1);
+	if (idx == 0)
+	{
+		*head = add_nodeint(head, n);
+		return (*head);
+	}
+	else
+		aux = get_nodeint_at_index(*head, idx - 1);
 	if (aux == NULL)
 		return (NULL);
 	new = malloc(sizeof(listint_t));
@@ -47,4 +53,23 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 		return (head);
 	}
 	return (NULL);
+}
+/**
+ * add_nodeint - add a member ad beggining of a list
+ * @head: the pointer to the list
+ * @n: the content of the structure
+ * Return: the pointer to the head of the list
+ */
+listint_t *add_nodeint(listint_t **head, const int n)
+{
+	listint_t *new;
+
+	new = malloc(sizeof(listint_t));
+	if (new == NULL)
+		return (NULL);
+	new->n = n;
+	new->next = *head;
+	*head = new;
+
+	return (*head);
 }

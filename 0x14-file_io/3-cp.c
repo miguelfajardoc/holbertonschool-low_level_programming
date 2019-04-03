@@ -13,9 +13,8 @@
  */
 int main(int ac, char **av)
 {
-	int fd_from, fd_to;
-	int check;
-	char buffer[1024] = {0};
+	int fd_from, fd_to, check;
+	char buffer[3500] = {0};
 
 	if (ac != 3)
 	{
@@ -25,14 +24,13 @@ int main(int ac, char **av)
 	fd_from = open(av[1], O_RDONLY);
 	if (fd_from < 0)
 	{
-		dprintf(2, "Can't read from file %s\n", av[1]);
+		dprintf(2, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
 	check = read(fd_from, buffer, 1024);
 	if (check < 0)
 	{
-		dprintf(2, "Can't read from file %s\n", av[1]);
-		close(fd_from);
+		dprintf(2, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
 	fd_to = open(av[2], O_RDONLY);
@@ -44,22 +42,24 @@ int main(int ac, char **av)
 	{
 		if (fd_to != -1)
 			close(fd_to);
-		dprintf(2, "Can't write to file %s\n", av[2]);
+		dprintf(2, "Error: Can't write to file %s\n", av[2]);
 		exit(99);
 	}
-	if (fd_to != -1)
-		close(fd_to);
-	close(fd_from);
+	if (close(fd_from) < 0)
+	{
+		dprintf(2, "Can't close fd %d\n", fd_from);
+		exit(100);
+	}
 	return (0);
 }
 /**
  * create_file2 - create or rewrite a file with a content
  * @filename: the name of the file
- * @text_content: the text to create qhe file
+ * @buffer: the text to create qhe file
  * @flag: if is 1, create a file with permision, if is 0, open without perms
  * Return: Always the amount of letters printed.
  */
-int create_file2(const char *filename, char *text_content, int flag)
+int create_file2(const char *filename, char *buffer, int flag)
 {
 	int state = 0;
 	int f_des = 0;
@@ -75,12 +75,12 @@ int create_file2(const char *filename, char *text_content, int flag)
 		close(f_des);
 		return (-1);
 	}
-	if (text_content == NULL)
+	if (buffer == NULL)
 	{
 		close(f_des);
 		return (1);
 	}
-	state = write(f_des, text_content, _strlen(text_content));
+	state = write(f_des, buffer, _strlen(buffer));
 	if (state < 0)
 	{
 		close(f_des);

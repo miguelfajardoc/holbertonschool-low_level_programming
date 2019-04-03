@@ -41,7 +41,16 @@ int main(int ac, char **av)
 		dprintf(2, "Can't write to file %s\n", av[2]);
 		exit(99);
 	}
-	close(fd_from), close(fd_to);
+	if (close(fd_from) < 0)
+	{
+		dprintf(2, "Can't close fd %d\n", fd_from);
+		exit(100);
+	}
+	if (close(fd_to) < 0)
+	{
+		dprintf(2, "Can't close fd %d\n", fd_to;
+		exit(100);
+	}
 	return (0);
 }
 /**

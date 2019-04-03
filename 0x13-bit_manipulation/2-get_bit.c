@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include "holberton.h"
 /**
- * print_binary - print a int in binary
- * @n: a number to rint in binary
+ * get_bit - get a value of a bit at a given index
+ * @n: a number to check the bit
  * @index: the index
+ * Return: the bit value found.
  */
 int get_bit(unsigned long int n, unsigned int index)
 {

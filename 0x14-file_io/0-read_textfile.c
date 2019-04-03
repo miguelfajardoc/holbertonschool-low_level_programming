@@ -6,9 +6,10 @@
 #include <unistd.h>
 #include "holberton.h"
 /**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
+ * read_textfile - read a text, and print depend of a quantity of letters
+ * @filename: the path name of the file to print
+ * @letters: the amount of letters to print
+ * Return: Always the amount of letters printed.
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
@@ -21,23 +22,29 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	buffer = malloc(sizeof(char) * letters);
 	if (buffer == NULL)
 	{
-		free (buffer);
+		free(buffer);
 		return (0);
 	}
 	f_des = open(filename, O_RDONLY);
 	if (f_des < 0)
-	 	return (0);
+	{
+		free(buffer);
+		return (0);
+	}
 	tam = read(f_des, buffer, letters);
 	if (tam < 0)
 	{
+		free(buffer);
 		close(f_des);
 		return (0);
 	}
-	if (write(1, buffer, tam) < 0)
+	if (write(STDOUT_FILENO, buffer, tam) < 0)
 	{
+		free(buffer);
 		close(f_des);
 		return (0);
 	}
 	close(f_des);
+	free(buffer);
 	return (tam);
 }

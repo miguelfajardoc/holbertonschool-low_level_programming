@@ -48,7 +48,7 @@ int main(int ac, char **av)
 	}
 	if (close(fd_to) < 0)
 	{
-		dprintf(2, "Can't close fd %d\n", fd_to;
+		dprintf(2, "Can't close fd %d\n", fd_to);
 		exit(100);
 	}
 	return (0);

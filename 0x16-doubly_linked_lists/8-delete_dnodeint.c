@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * int delete_dnodeint_at_index - delete a node in the given index
+ * delete_dnodeint_at_index - delete a node in the given index
  * @head: the head of the list
  * @index: the index of the list where the new node sould be deleted
  * Return: the address of the new node or NULL if not is posible add

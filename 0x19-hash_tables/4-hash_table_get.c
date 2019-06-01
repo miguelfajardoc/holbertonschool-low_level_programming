@@ -28,6 +28,5 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 		}
 		node = node->next;
 	}
-	printf("index equal, key dont");
 	return (NULL);
 }

@@ -1,0 +1,31 @@
+/**
+ * insert_node - Function insert a node i after a j node.
+ *
+ * @head: pointer to initial node.
+ * @i: Pointer to the node to insert.
+ * @j: Pointer node to insert.
+ */
+void insert_node(listint_t *head, listint_t *i, listint_t *j)
+{
+	listint_t *aux;
+
+	aux = i;
+	i = aux->prev;
+	(aux->prev)->next = aux->next;
+
+	if (aux->next != NULL)
+		(aux->next)->prev = aux->prev;
+	aux->prev = j;
+	if (j != NULL)
+	{
+		aux->next = j->next;
+		j->next = aux;
+		(aux->next)->prev = aux;
+	}
+	else
+	{
+		aux->next = head;
+		head->prev = aux;
+		head = aux;
+	}
+}

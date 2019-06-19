@@ -60,8 +60,11 @@ void quick_sort_real(int *array, size_t size, int *array_print, size_t size_p)
 
 	}
 	if ((size - (i + 2)) > 1)
+	{
+		/* printf("size: %lu - (i: %lu + 2) = %lu\n", size, i, size - (i + 2)); */
 		quick_sort_real(&array[i + 2], size - (i + 2), array_print,
 				size_p);
-	if ((int)i > 1)
+	}
+	if ((int)i >= 1)
 		quick_sort_real(&array[0], i + 1, array_print, size_p);
 }

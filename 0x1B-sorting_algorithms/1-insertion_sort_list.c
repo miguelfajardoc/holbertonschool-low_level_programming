@@ -28,13 +28,14 @@ void insert_node(listint_t **head, listint_t *aux, listint_t *j)
 
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *j = *list;
+	listint_t *j;
 	listint_t *i;
 	listint_t *aux;
 
-	if (*list == NULL)
+	if (list == NULL || *list == NULL)
 		return;
 
+	j = *list;
 	i = (*list)->next;
 	aux = i;
 

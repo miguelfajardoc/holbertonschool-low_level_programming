@@ -38,6 +38,8 @@ void quick_sort_real(int *array, size_t size, int *array_print, size_t size_p)
 	size_t pivot = size - 1;
 	size_t j = 0;
 
+	if (array == NULL)
+		return;
 	while (j < pivot)
 	{
 		if (array[j] <= array[pivot])

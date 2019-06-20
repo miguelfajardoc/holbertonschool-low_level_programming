@@ -25,4 +25,5 @@ void insertion_sort_list(listint_t **list);
 void insert_node(listint_t **head, listint_t *aux, listint_t *j);
 void quick_sort_real(int *array, size_t size, int *array_print, size_t size_p);
 void quick_sort(int *array, size_t size);
+void shell_sort(int *array, size_t size);
 #endif

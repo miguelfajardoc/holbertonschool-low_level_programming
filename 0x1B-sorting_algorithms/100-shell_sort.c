@@ -27,7 +27,8 @@ void shell_sort(int *array, size_t size)
 	size_t static_gap;
 
 	static_gap = size;
-
+	if (array == NULL)
+		return;
 	while (static_gap != 1)
 	{
 		iter = 0;

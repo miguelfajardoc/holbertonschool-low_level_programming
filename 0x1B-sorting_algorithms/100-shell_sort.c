@@ -7,16 +7,16 @@
 
 void swap(int *prev, int *next)
 {
-        int aux;
+	int aux;
 
-        aux = *prev;
-        *prev = *next;
-        *next = aux;
+	aux = *prev;
+	*prev = *next;
+	*next = aux;
 }
 /**
-*
-*
-*
+* shell_sort - function that sort wit the shell algorithm
+* @array: the array to sort
+* @size: the size to sort
 *
 **/
 void shell_sort(int *array, size_t size)
@@ -39,27 +39,18 @@ void shell_sort(int *array, size_t size)
 			if (array[iter] > array[gap])
 			{
 				swap(&array[iter], &array[gap]);
-				while (1)
+				while (((int)iter - ((int)static_gap)) >= 0)
 				{
-					if ((int)iter - ((int)static_gap) 
-					     >= 0)
-					{
-						/*printf("iter: %d, gap: %d - %d\n", (int)iter, (int)gap, (int)iter - ((int)gap - (int)iter));*/
-						iter -= static_gap;
-						gap  -= static_gap;
-						if (array[iter] > array[gap])
-						{
-							swap(&array[iter],
-							     &array[gap]);
-						}
-					}
+					iter -= static_gap;
+					gap  -= static_gap;
+					if (array[iter] > array[gap])
+						swap(&array[iter], &array[gap]);
 					else
 						break;
 				}
 				gap = end;
 				iter = gap - static_gap;
 			}
-		
 			iter += 1;
 			gap += 1;
 			end += 1;

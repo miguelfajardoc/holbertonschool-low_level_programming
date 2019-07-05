@@ -4,3 +4,4 @@ holberton*
 *.c
 *~
 *.h
+*.o

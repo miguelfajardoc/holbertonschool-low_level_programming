@@ -23,7 +23,7 @@ int binary_search(int *array, size_t size, int value)
 	while (first <= last)
 	{
 		print_array(array, first, last);
-	        if (array[half] == value)
+		if (array[half] == value)
 			return (half);
 		if (array[half] < value)
 		{
@@ -39,7 +39,7 @@ int binary_search(int *array, size_t size, int value)
 }
 
 /**
- * print_parray - print a portion of array since a given index to a maximum
+ * print_array - print a portion of array since a given index to a maximum
  * @array: the array to print
  * @first: the first element of the array
  * @last: the last element of the array
@@ -47,8 +47,9 @@ int binary_search(int *array, size_t size, int value)
 void print_array(int *array, int first, int last)
 {
 	int iter;
+
 	printf("Searching in array:");
-	for(iter = first; iter <= last; iter++)
+	for (iter = first; iter <= last; iter++)
 	{
 		printf(" %d", array[iter]);
 		if (iter != last)

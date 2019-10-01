@@ -1,5 +1,0 @@
-test*
-a.out
-0x02-functions_nested_loops
-0x07-recursion
-find -name "*~" -type f
